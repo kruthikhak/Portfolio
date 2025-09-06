@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracurriculars - Kruthikha Vishali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#768A96',
+                        secondary: '#AAC7D8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#AAC7D8]">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out" id="sidebar">
+        <div class="flex items-center justify-between p-6 border-b">
+            <h2 class="text-xl font-bold text-gray-800">Portfolio</h2>
+            <button class="lg:hidden" onclick="toggleSidebar()">
+                <i class="fas fa-times text-gray-600"></i>
+            </button>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-user mr-3"></i>
+                    <span>About</span>
+                </a>
+                <a href="skills.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-code mr-3"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="projects.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-project-diagram mr-3"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="resume.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="extracurriculars.html" class="flex items-center px-4 py-3 text-white bg-[#768A96] rounded-lg">
+                    <i class="fas fa-trophy mr-3"></i>
+                    <span>Extracurriculars</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="lg:hidden fixed top-4 left-4 z-50">
+        <button class="bg-white p-2 rounded-lg shadow-lg" onclick="toggleSidebar()">
+            <i class="fas fa-bars text-gray-600"></i>
+        </button>
+    </div>
+
+    <!-- Main content -->
+    <div class="lg:ml-64 min-h-screen">
+        <div class="py-12 px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Page Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Extracurricular Activities</h1>
+                    <p class="text-lg text-gray-600">Beyond academics - exploring interests and developing skills</p>
+                </div>
+
+                <!-- Activities Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blockchain Exploration -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Blockchain Exploration</h3>
+                                <i class="fas fa-link text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Actively exploring blockchain trends, smart contracts, and decentralized applications to understand the future of technology.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Ethereum ecosystem research</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Smart contract development</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>DeFi protocols study</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hackathon Participation -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Hackathon Participation</h3>
+                                <i class="fas fa-laptop-code text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Regular participation in hackathons to solve real-world problems, collaborate with teams, and showcase technical skills.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Problem-solving challenges</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Team collaboration</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Innovation projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stock Market Learning -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Stock Market Learning</h3>
+                                <i class="fas fa-chart-line text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Learning about financial markets, investment strategies, and economic trends to develop financial literacy and analytical skills.
+                            </p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Market analysis</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Investment strategies</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600">
+                                    <i class="fas fa-check-circle mr-2 text-[#768A96]"></i>
+                                    <span>Financial literacy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills Section -->
+                <div class="mt-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center">
+                        <i class="fas fa-users mr-3 text-[#768A96]"></i>
+                        Soft Skills & Competencies
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Fast Learning -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                            <div class="w-16 h-16 bg-[#768A96] rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-brain text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Fast Learning</h3>
+                            <p class="text-gray-600 text-sm">
+                                Quick to adapt to new technologies and concepts, enabling rapid skill development and project delivery.
+                            </p>
+                        </div>
+
+                        <!-- Team Collaboration -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                            <div class="w-16 h-16 bg-[#768A96] rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Team Collaboration</h3>
+                            <p class="text-gray-600 text-sm">
+                                Effective communication and collaboration in diverse teams, contributing to successful project outcomes.
+                            </p>
+                        </div>
+
+                        <!-- Critical Thinking -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                            <div class="w-16 h-16 bg-[#768A96] rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lightbulb text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Critical Thinking</h3>
+                            <p class="text-gray-600 text-sm">
+                                Analytical approach to problem-solving, evaluating multiple solutions and making informed decisions.
+                            </p>
+                        </div>
+
+                        <!-- Adaptability -->
+                        <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                            <div class="w-16 h-16 bg-[#768A96] rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-sync-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Adaptability</h3>
+                            <p class="text-gray-600 text-sm">
+                                Flexible approach to changing requirements and environments, maintaining productivity and quality.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Goals -->
+                <div class="mt-12 bg-white rounded-lg shadow-md p-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-target mr-3 text-[#768A96]"></i>
+                        Future Goals & Aspirations
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Short-term Goals</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right mr-3 text-[#768A96] mt-1"></i>
+                                    <span class="text-gray-600">Publish ongoing patent & research work</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right mr-3 text-[#768A96] mt-1"></i>
+                                    <span class="text-gray-600">Secure impactful internshipsin Data Science/ML </span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right mr-3 text-[#768A96] mt-1"></i>
+                                    <span class="text-gray-600">Strengthen academic & technical profile</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Long-term Aspirations</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right mr-3 text-[#768A96] mt-1"></i>
+                                    <span class="text-gray-600">Pursue a master’s/PhD in Data Science or AI</span>
+                                </li>
+                                <li class="flex items-start"> 
+                                    <i class="fas fa-arrow-right mr-3 text-[#768A96] mt-1"></i>
+                                    <span class="text-gray-600">Build expertise as an AI researcher & engineer</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right mr-3 text-[#768A96] mt-1"></i>
+                                    <span class="text-gray-600">Establish a career in global tech/research organizations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/interactions.js"></script>
+</body>
+</html> 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Kruthikha Vishali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#768A96',
+                        secondary: '#AAC7D8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#AAC7D8]">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out" id="sidebar">
+        <div class="flex items-center justify-between p-6 border-b">
+            <h2 class="text-xl font-bold text-gray-800">Portfolio</h2>
+            <button class="lg:hidden" onclick="toggleSidebar()">
+                <i class="fas fa-times text-gray-600"></i>
+            </button>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-user mr-3"></i>
+                    <span>About</span>
+                </a>
+                <a href="skills.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-code mr-3"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="projects.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-project-diagram mr-3"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="resume.html" class="flex items-center px-4 py-3 text-white bg-[#768A96] rounded-lg">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="extracurriculars.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-trophy mr-3"></i>
+                    <span>Extracurriculars</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="lg:hidden fixed top-4 left-4 z-50">
+        <button class="bg-white p-2 rounded-lg shadow-lg" onclick="toggleSidebar()">
+            <i class="fas fa-bars text-gray-600"></i>
+        </button>
+    </div>
+
+    <!-- Main content -->
+    <div class="lg:ml-64 min-h-screen">
+        <div class="py-12 px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Page Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Resume</h1>
+                    <p class="text-lg text-gray-600">Professional experience and qualifications</p>
+                </div>
+
+                <!-- Resume Actions -->
+                <div class="text-center mb-8">
+                    <a href="assets/Kruthikha Vishali K.pdf" 
+                       download="Kruthikha-Vishali-Resume.pdf"
+                       class="inline-flex items-center bg-[#768A96] hover:bg-[#5a6b75] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Resume
+                    </a>
+                </div>
+
+                <!-- Resume Viewer -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 border-b">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-file-pdf mr-3 text-[#768A96]"></i>
+                            Kruthikha Vishali - Resume
+                        </h2>
+                    </div>
+                    <div class="h-[800px]">
+                        <iframe 
+                            src="assets/Kruthikha Vishali K.pdf" 
+                            class="w-full h-full border-0"
+                            title="Kruthikha Vishali Resume">
+                            <p>Your browser does not support PDFs. Please <a href="assets/Kruthikha Vishali K.pdf" target="_blank">download the resume</a> to view it.</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Resume Summary -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="text-center">
+                            <i class="fas fa-graduation-cap text-3xl text-[#768A96] mb-4"></i>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Education</h3>
+                            <p class="text-gray-600">B.Tech Computer Engineering</p>
+                            <p class="text-sm text-[#768A96]">VIT, 2023-2027</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="text-center">
+                            <i class="fas fa-code text-3xl text-[#768A96] mb-4"></i>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Skills</h3>
+                            <p class="text-gray-600">Programming, Data Science</p>
+                            <p class="text-sm text-[#768A96]">Web Development, ML</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="text-center">
+                            <i class="fas fa-project-diagram text-3xl text-[#768A96] mb-4"></i>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Projects</h3>
+                            <p class="text-gray-600">Healthcare, Blockchain</p>
+                            <p class="text-sm text-[#768A96]">Data Analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-address-card mr-3 text-[#768A96]"></i>
+                        Contact Information
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#768A96]"></i>
+                            <span class="text-gray-700">Kruthikhakrishna@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#768A96]"></i>
+                            <span class="text-gray-700">+91 8825500979</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-linkedin mr-3 text-[#768A96]"></i>
+                            <a href="https://linkedin.com/in/kruthikha-vishali-k-546a492b1" target="_blank" class="text-gray-700 hover:text-[#768A96]">
+                                linkedin.com/in/kruthikha-vishali-k-546a492b1
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-github mr-3 text-[#768A96]"></i>
+                            <a href="https://github.com/kruthikhak" target="_blank" class="text-gray-700 hover:text-[#768A96]">
+                                github.com/kruthikhak
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/interactions.js"></script>
+</body>
+</html> 

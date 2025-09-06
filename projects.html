@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kruthikha Vishali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#768A96',
+                        secondary: '#AAC7D8'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#AAC7D8]">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out" id="sidebar">
+        <div class="flex items-center justify-between p-6 border-b">
+            <h2 class="text-xl font-bold text-gray-800">Portfolio</h2>
+            <button class="lg:hidden" onclick="toggleSidebar()">
+                <i class="fas fa-times text-gray-600"></i>
+            </button>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-user mr-3"></i>
+                    <span>About</span>
+                </a>
+                <a href="skills.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-code mr-3"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="projects.html" class="flex items-center px-4 py-3 text-white bg-[#768A96] rounded-lg">
+                    <i class="fas fa-project-diagram mr-3"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="resume.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="contact.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-envelope mr-3"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="extracurriculars.html" class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="fas fa-trophy mr-3"></i>
+                    <span>Extracurriculars</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="lg:hidden fixed top-4 left-4 z-50">
+        <button class="bg-white p-2 rounded-lg shadow-lg" onclick="toggleSidebar()">
+            <i class="fas fa-bars text-gray-600"></i>
+        </button>
+    </div>
+
+    <!-- Main content -->
+    <div class="lg:ml-64 min-h-screen">
+        <div class="py-12 px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Page Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">My Projects</h1>
+                    <p class="text-lg text-gray-600">Showcasing my work and technical skills</p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- CareConnect Project -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">CareConnect</h3>
+                                <i class="fas fa-heartbeat text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Smart healthcare recommendation system with user auth, appointment flow, and map-based provider matching.
+                            </p>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-gray-800 mb-2">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Django</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Python</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">SQLite</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Tailwind CSS</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/kruthikhak/Care-Connect" 
+                               target="_blank"
+                               class="inline-flex items-center bg-[#768A96] hover:bg-[#5a6b75] text-white px-4 py-2 rounded-lg transition-colors duration-300">
+                                <i class="fab fa-github mr-2"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blockchain DApp Project -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Blockchain DApp</h3>
+                                <i class="fas fa-link text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Decentralized app using smart contracts for Web3 interactions.
+                            </p>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-gray-800 mb-2">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Solidity</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Web3.js</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">React.js</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-gray-800 mb-2">Role:</h4>
+                                <p class="text-gray-600">Smart Contract Developer</p>
+                            </div>
+                            <button class="inline-flex items-center bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed">
+                                <i class="fas fa-link mr-2"></i>
+                                In Development
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Portfolio Website -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Portfolio Website</h3>
+                                <i class="fas fa-user text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                Personal portfolio website showcasing skills, projects, and professional experience.
+                            </p>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-gray-800 mb-2">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">HTML5</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">CSS3</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">JavaScript</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Tailwind CSS</span>
+                                </div>
+                            </div>
+                            <button class="inline-flex items-center bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed">
+                                <i class="fas fa-link mr-2"></i>
+                                Current Project
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Skin Health Monitor Project -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800">Skin Health Monitor: Deep Learning-Based Facial Condition Classification</h3>
+                                <i class="fas fa-brain text-2xl text-[#768A96]"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                This project leverages deep learning to analyze facial images and classify common skin conditions (e.g., acne, rosacea, dark spots). It integrates texture features (Gabor filters) with attention-based neural networks to enhance diagnostic accuracy.
+                            </p>
+                            <div class="mb-4">
+                                <h4 class="font-medium text-gray-800 mb-2">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Python</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">PyTorch</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Torchvision</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">ResNet50 + CAW</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">OpenCV</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">PIL</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">NumPy</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Scikit-learn</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Matplotlib</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">tqdm</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">Jupyter Notebook</span>
+                                    <span class="px-2 py-1 bg-[#AAC7D8] text-[#768A96] rounded text-sm">VS Code</span>
+                                </div>
+                            </div>
+                            <button class="inline-flex items-center bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed">
+                                <i class="fas fa-cog mr-2"></i>
+                                Under Development
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 mb-4">Interested in collaborating on a project?</p>
+                    <a href="contact.html" 
+                       class="inline-flex items-center bg-[#768A96] hover:bg-[#5a6b75] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/interactions.js"></script>
+</body>
+</html> 
