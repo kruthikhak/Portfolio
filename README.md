@@ -2,7 +2,7 @@
 
 A personalized portfolio website showcasing my skills, projects, and professional experience as a Computer Engineering student specializing in Data Science.
 
-## 🎨 Design Features
+## Design Features
 
 - **Custom Color Scheme**: 
   - Background: `#AAC7D8` (Soft Blue-Gray)
@@ -11,22 +11,22 @@ A personalized portfolio website showcasing my skills, projects, and professiona
 - **Modern UI**: Clean, professional design with smooth animations
 - **Interactive Elements**: Hover effects, transitions, and dynamic content
 
-## 📱 Pages & Features
+## Pages & Features
 
-### 🏠 Homepage (`index.html`)
+### Homepage (`index.html`)
 - Hero section with personalized introduction
 - Call-to-action buttons for projects and resume
 - Quick stats overview
 - Responsive design with gradient backgrounds
 
-### 👤 About (`about.html`)
+### About (`about.html`)
 - Personal statement and background
 - Education details (VIT, Computer Engineering)
 - Hobbies and interests section
 - Contact information
 - Placeholder for awards and recognition
 
-### 🧠 Skills (`skills.html`)
+### Skills (`skills.html`)
 - **Interactive skill categories** with toggle functionality:
   - Programming Languages (Python, Java, C++, C, Solidity)
   - Web Development (HTML5, CSS3, JavaScript, React.js, Bootstrap)
@@ -36,7 +36,7 @@ A personalized portfolio website showcasing my skills, projects, and professiona
 - Click to expand/collapse skill details
 - Visual icons and proficiency levels
 
-### 💼 Projects (`projects.html`)
+### Projects (`projects.html`)
 - **CareConnect**: Healthcare recommendation system
   - Tech: Django, Python, SQLite, Tailwind CSS
   - Link: https://github.com/kruthikhak/Care-Connect
@@ -45,13 +45,13 @@ A personalized portfolio website showcasing my skills, projects, and professiona
 - Additional project placeholders with modern card design
 - Tech stack tags and project descriptions
 
-### 📄 Resume (`resume.html`)
+### Resume (`resume.html`)
 - Embedded PDF viewer for resume
 - Download button for resume
 - Contact information summary
 - Professional overview cards
 
-### 📬 Contact (`contact.html`)
+### Contact (`contact.html`)
 - Contact form with validation
 - Social media links:
   - Email: Kruthikhakrishna@gmail.com
@@ -61,14 +61,14 @@ A personalized portfolio website showcasing my skills, projects, and professiona
 - Hover animations on social icons
 - Availability and response time information
 
-### 🏆 Extracurriculars (`extracurriculars.html`)
+### Extracurriculars (`extracurriculars.html`)
 - **Blockchain Exploration**: Ethereum ecosystem, smart contracts, DeFi
 - **Hackathon Participation**: Problem-solving, team collaboration, innovation
 - **Stock Market Learning**: Market analysis, investment strategies, financial literacy
 - **Soft Skills**: Fast learning, team collaboration, critical thinking, adaptability
 - Future goals and aspirations
 
-## 🧭 Navigation
+##  Navigation
 
 ### Persistent Sidebar
 - Fixed sidebar on desktop, collapsible on mobile
@@ -83,7 +83,7 @@ A personalized portfolio website showcasing my skills, projects, and professiona
   - Contact
   - Extracurriculars
 
-## 🛠 Technical Implementation
+## Technical Implementation
 
 ### Frontend Technologies
 - **HTML5**: Semantic markup
@@ -116,7 +116,7 @@ portfolio/
 └── README.md               # Project documentation
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone or download** the portfolio files
 2. **Replace the resume PDF** in `assets/resume.pdf` with your actual resume
@@ -125,7 +125,7 @@ portfolio/
 5. **Add your projects** to projects.html
 6. **Deploy** to your preferred hosting service
 
-## 🎯 Customization
+##  Customization
 
 ### Easy to Edit Sections
 - **Personal Information**: Update name, contact details, and bio
@@ -140,14 +140,14 @@ portfolio/
 - **Styling**: Use Tailwind utility classes or add custom CSS
 - **Images**: Replace placeholder images with actual photos
 
-## 📧 Contact Information
+## Contact Information
 
 - **Email**: Kruthikhakrishna@gmail.com
 - **Phone**: +91 8825500979
 - **LinkedIn**: [Kruthikha Vishali K](https://linkedin.com/in/kruthikha-vishali-k-546a492b1)
 - **GitHub**: [kruthikhak](https://github.com/kruthikhak)
 
-## 🔧 Browser Support
+##  Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
@@ -161,4 +161,4 @@ This portfolio template is open source and available for personal and commercial
 
 ---
 
-**Built with ❤️ by Kruthikha Vishali** 
+**Built by Kruthikha Vishali** 
