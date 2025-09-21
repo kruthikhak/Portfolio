@@ -155,7 +155,7 @@ portfolio/
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 📝 License
+## License
 
 This portfolio template is open source and available for personal and commercial use.
 
