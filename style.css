@@ -1068,3 +1068,242 @@ body {
   .research-item { grid-template-columns: 3rem 1fr; gap: 1rem; }
   .project-stats { flex-wrap: wrap; gap: 1.25rem; }
 }
+
+/* ---- PROJECT TILES (collapsible accordion) ---- */
+.projects-hint {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: -0.5rem 0 1.75rem;
+}
+
+.projects-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.project-tile {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s, border-color 0.3s;
+}
+.project-tile:not([open]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(28,28,26,0.07);
+  border-color: rgba(74,87,80,0.25);
+}
+.project-tile[open] {
+  box-shadow: 0 10px 30px rgba(28,28,26,0.05);
+}
+
+.project-tile--star {
+  background: var(--text);
+  color: rgba(245,242,238,0.9);
+  border-color: rgba(245,242,238,0.08);
+}
+.project-tile--star:not([open]):hover {
+  border-color: rgba(196,180,154,0.3);
+}
+
+/* Summary (collapsed header) */
+.tile-summary {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  list-style: none;
+  display: block;
+  position: relative;
+}
+.tile-summary::-webkit-details-marker { display: none; }
+.tile-summary::marker { content: ""; }
+
+.tile-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.tile-badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--sage-pale);
+  border: 1px solid rgba(74,87,80,0.18);
+  padding: 0.3rem 0.75rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project-tile--star .tile-badge {
+  background: rgba(196,180,154,0.15);
+  color: var(--bronze);
+  border-color: rgba(196,180,154,0.3);
+}
+
+.tile-chevron {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.03);
+}
+.tile-chevron::before { content: "+"; display: block; margin-top: -3px; }
+.project-tile[open] .tile-chevron { transform: rotate(45deg); background: rgba(0,0,0,0.06); }
+.project-tile--star .tile-chevron {
+  color: var(--bronze);
+  background: rgba(196,180,154,0.1);
+}
+.project-tile--star[open] .tile-chevron { background: rgba(196,180,154,0.18); }
+
+.tile-title {
+  font-family: var(--ff-display);
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 0.55rem 0;
+  color: var(--text);
+}
+.project-tile--star .tile-title { color: var(--bg); }
+
+.tile-oneliner {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 72ch;
+}
+.project-tile--star .tile-oneliner { color: rgba(245,242,238,0.62); }
+
+/* Body (expanded content) */
+.tile-body {
+  padding: 0.5rem 2rem 1.9rem 2rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+  animation: tileReveal 0.4s ease-out;
+}
+.project-tile--star .tile-body { border-top-color: rgba(245,242,238,0.08); }
+
+@keyframes tileReveal {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reuse existing content classes inside tile body, with scoped overrides */
+.tile-body .project-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 1rem 0 0.5rem;
+}
+.project-tile--star .tile-body .project-desc { color: rgba(245,242,238,0.68); }
+.project-tile--star .tile-body strong { color: rgba(245,242,238,0.95); font-weight: 400; }
+
+.tile-body .project-collab {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  margin: 1.25rem 0 0.5rem;
+  font-style: italic;
+}
+.project-tile--star .tile-body .project-collab { color: rgba(245,242,238,0.42); }
+
+.tile-body .project-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.25rem;
+  margin: 1.5rem 0 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(0,0,0,0.025);
+  border-radius: 0.875rem;
+  border: 1px solid rgba(74,87,80,0.08);
+}
+.project-tile--star .tile-body .project-stats {
+  background: rgba(245,242,238,0.04);
+  border-color: rgba(245,242,238,0.08);
+}
+.tile-body .project-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.tile-body .stat-val {
+  font-family: var(--ff-display);
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1;
+}
+.project-tile--star .tile-body .stat-val { color: var(--bronze); }
+.tile-body .stat-key {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.project-tile--star .tile-body .stat-key { color: rgba(245,242,238,0.45); }
+
+.tile-body .project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+}
+.tile-body .project-stack span {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.75rem;
+  background: var(--sage-pale);
+  border: 1px solid rgba(74,87,80,0.12);
+  border-radius: 2rem;
+  color: var(--text-muted);
+}
+.project-tile--star .tile-body .project-stack span {
+  background: rgba(245,242,238,0.06);
+  border-color: rgba(245,242,238,0.1);
+  color: rgba(245,242,238,0.6);
+}
+
+.tile-body .project-live {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--blue);
+  background: var(--blue-pale);
+  border: 1px solid rgba(92,111,138,0.2);
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tile-body .project-live:hover { background: rgba(92,111,138,0.14); }
+.project-tile--star .tile-body .project-live {
+  color: var(--bronze);
+  background: rgba(196,180,154,0.1);
+  border-color: rgba(196,180,154,0.3);
+}
+.project-tile--star .tile-body .project-live:hover { background: rgba(196,180,154,0.18); }
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .tile-summary { padding: 1.25rem 1.25rem; }
+  .tile-body { padding: 0.5rem 1.25rem 1.5rem 1.25rem; }
+  .tile-title { font-size: 1.3rem; }
+  .tile-oneliner { font-size: 0.86rem; }
+  .tile-body .project-stats { gap: 1.5rem; padding: 1rem 1.25rem; }
+}

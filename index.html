@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
@@ -171,123 +171,100 @@
   <section class="projects section" id="projects">
     <div class="section-label">Projects</div>
     <h2 class="section-heading">Things I've built<br /><em>and shipped.</em></h2>
-    <div class="projects-grid">
+    <p class="projects-hint">Tap any tile to expand &nbsp;·&nbsp; dark tiles are the lead projects</p>
+    <div class="projects-stack">
 
-      <!-- TB-DM Thesis (featured — ranked #1) -->
-      <article class="project-card project-card--featured" id="tb-dm">
-        <div class="project-card-inner">
-          <div class="project-left">
-            <div class="project-meta">
-              <span class="project-type">Bachelor's Thesis · Co-authored (equal contribution)</span>
-              <span class="project-badge-inline">Capstone in progress</span>
-            </div>
-            <h3 class="project-title">TB–Diabetes Comorbidity Risk Screening</h3>
-            <p class="project-subtitle">Explainable Screening on a National TB Registry</p>
-            <p class="project-desc">The World Health Organization recommends screening every TB patient for diabetes, but testing capacity is scarce. We built a screening model that ranks patients by diabetes risk and treatment-era mortality using <strong>only what the clinic holds on day one of notification</strong> — no later-workup fields, no leakage.</p>
-            <p class="project-desc">Starting from Brazil's SINAN-TB national registry (964,099 records), a field-by-field leakage audit under a single prediction-time rule removed 15 outcome-leaking fields, 1,849 post-death notifications, and the 2001–2006 era (30× death under-recording). Analysis cohort: <strong>684,694 patients</strong>, 88 notification-time features. We compared a heterogeneous GNN against XGBoost, logistic regression and MLP on identical inputs and group-aware splits.</p>
-            <p class="project-desc"><strong>Honest negative result:</strong> the GNN did not outperform a plain MLP after equal tuning. The reason was explainable from the graph itself — <strong>101 hubs served the entire 684K cohort</strong>, so the structure sends nearly identical messages to every patient. We report it as a finding, not a failure. Isotonic recalibration dropped expected calibration error from <strong>0.303 → 0.001</strong>, and a WHO-grounded guideline layer attaches verbatim passages to each flagged score (retrieval-grounded explanation without text generation — a deliberate clinical-safety choice). Indian hospital-data retraining pending ethics-committee approval, planned for the 8th-semester capstone.</p>
-            <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
-            <div class="project-stack">
-              <span>scikit-learn</span><span>XGBoost</span><span>PyTorch Geometric</span><span>SHAP</span><span>Isotonic Regression</span><span>BM25</span>
-            </div>
+      <!-- TB-DM (star tile — ranked #1) -->
+      <details class="project-tile project-tile--star" id="tb-dm">
+        <summary class="tile-summary">
+          <div class="tile-top-row">
+            <span class="tile-badge">Bachelor's Thesis · Capstone in progress</span>
+            <span class="tile-chevron" aria-hidden="true"></span>
           </div>
-          <div class="project-right">
-            <div class="project-stats-col">
-              <div class="project-stat-big">
-                <span class="stat-val">684,694</span>
-                <span class="stat-key">Patients Analyzed</span>
-              </div>
-              <div class="project-stat-big">
-                <span class="stat-val">0.808</span>
-                <span class="stat-key">Lock-box AUROC</span>
-              </div>
-              <div class="project-stat-big">
-                <span class="stat-val">200×</span>
-                <span class="stat-key">Calibration Improvement</span>
-              </div>
-              <div class="project-stat-big">
-                <span class="stat-val">41.1%</span>
-                <span class="stat-key">Deaths at Top 10%</span>
-              </div>
-            </div>
+          <h3 class="tile-title">TB–Diabetes Comorbidity Risk Screening</h3>
+          <p class="tile-oneliner">Rank TB patients by diabetes risk from day-one notification data on 684K patients — the GNN didn't beat a plain MLP, and we can explain exactly why.</p>
+        </summary>
+        <div class="tile-body">
+          <p class="project-desc">The World Health Organization recommends screening every TB patient for diabetes, but testing capacity is scarce. We built a screening model that ranks patients by diabetes risk and treatment-era mortality using <strong>only what the clinic holds on day one of notification</strong> — no later-workup fields, no leakage.</p>
+          <p class="project-desc">Starting from Brazil's SINAN-TB national registry (964,099 records), a field-by-field leakage audit under a single prediction-time rule removed 15 outcome-leaking fields, 1,849 post-death notifications, and the 2001–2006 era (30× death under-recording). Analysis cohort: <strong>684,694 patients</strong>, 88 notification-time features. We compared a heterogeneous GNN against XGBoost, logistic regression and MLP on identical inputs and group-aware splits.</p>
+          <p class="project-desc"><strong>Honest negative result:</strong> the GNN did not outperform a plain MLP after equal tuning. The reason was explainable from the graph itself — <strong>101 hubs served the entire 684K cohort</strong>, so the structure sends nearly identical messages to every patient. We report it as a finding, not a failure. Isotonic recalibration dropped expected calibration error from <strong>0.303 → 0.001</strong>, and a WHO-grounded guideline layer attaches verbatim passages to each flagged score (retrieval-grounded explanation without text generation — a deliberate clinical-safety choice). Indian hospital-data retraining pending ethics-committee approval, planned for the 8th-semester capstone.</p>
+          <div class="project-stats">
+            <div class="project-stat"><span class="stat-val">684,694</span><span class="stat-key">Patients Analyzed</span></div>
+            <div class="project-stat"><span class="stat-val">0.808</span><span class="stat-key">Lock-box AUROC</span></div>
+            <div class="project-stat"><span class="stat-val">200×</span><span class="stat-key">Calibration Improvement</span></div>
+            <div class="project-stat"><span class="stat-val">41.1%</span><span class="stat-key">Deaths at Top 10%</span></div>
+          </div>
+          <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
+          <div class="project-stack">
+            <span>scikit-learn</span><span>XGBoost</span><span>PyTorch Geometric</span><span>SHAP</span><span>Isotonic Regression</span><span>BM25</span>
           </div>
         </div>
-      </article>
+      </details>
 
-      <!-- RECIQ (featured — ranked #2, matched prominence to TB-DM) -->
-      <article class="project-card project-card--featured" id="reciq">
-        <div class="project-card-inner">
-          <div class="project-left">
-            <div class="project-meta">
-              <span class="project-type">Research · Co-authored (equal contribution)</span>
-              <span class="project-badge-inline">Manuscript under review</span>
-            </div>
-            <h3 class="project-title">RECIQ</h3>
-            <p class="project-subtitle">Multimodal Invoice Extraction System</p>
-            <p class="project-desc">Indian commercial invoices are extraction-hard for two reasons at once: a long-tail schema of 174 fields where fewer than 7% are filled per invoice, and natural visual noise that generic vision-language models were never trained for. Off-the-shelf VLMs hallucinate values or produce unparseable output.</p>
-            <p class="project-desc">RECIQ tackles both problems on Qwen2-VL-7B-Instruct through three core ideas: <strong>tokenizer surgery</strong> that injects all 174 schema field names as atomic vocabulary tokens, <strong>LoRA fine-tuning</strong> that concentrates gradient signals on schema-relevant positions, and a <strong>grammar-constrained beam decoder</strong> that guarantees syntactically valid JSON at every generation step. A downstream GraphSAGE anomaly detector built on RECIQ's structured output reaches 68.1% macro F1 for financial auditing.</p>
-            <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
-            <div class="project-stack">
-              <span>Qwen2-VL-7B</span><span>LoRA / PEFT</span><span>PyTorch</span><span>HuggingFace</span><span>PyTorch Geometric</span>
-            </div>
+      <!-- RECIQ (star tile — ranked #2) -->
+      <details class="project-tile project-tile--star" id="reciq">
+        <summary class="tile-summary">
+          <div class="tile-top-row">
+            <span class="tile-badge">Research · Co-authored · Manuscript under review</span>
+            <span class="tile-chevron" aria-hidden="true"></span>
           </div>
-          <div class="project-right">
-            <div class="project-stats-col">
-              <div class="project-stat-big">
-                <span class="stat-val">83.04%</span>
-                <span class="stat-key">Active Exact Match</span>
-              </div>
-              <div class="project-stat-big">
-                <span class="stat-val">99.0%</span>
-                <span class="stat-key">Parse Rate</span>
-              </div>
-              <div class="project-stat-big">
-                <span class="stat-val">+48.5pp</span>
-                <span class="stat-key">Over Best Baseline</span>
-              </div>
-              <div class="project-stat-big">
-                <span class="stat-val">7,124</span>
-                <span class="stat-key">Invoices Trained On</span>
-              </div>
-            </div>
+          <h3 class="tile-title">RECIQ — Multimodal Invoice Extraction</h3>
+          <p class="tile-oneliner">Tokenizer surgery + LoRA + grammar-constrained decoding on Qwen2-VL-7B — +48.5pp over Florence-2 on Indian commercial invoices.</p>
+        </summary>
+        <div class="tile-body">
+          <p class="project-desc">Indian commercial invoices are extraction-hard for two reasons at once: a long-tail schema of 174 fields where fewer than 7% are filled per invoice, and natural visual noise that generic vision-language models were never trained for. Off-the-shelf VLMs hallucinate values or produce unparseable output.</p>
+          <p class="project-desc">RECIQ tackles both problems on Qwen2-VL-7B-Instruct through three core ideas: <strong>tokenizer surgery</strong> that injects all 174 schema field names as atomic vocabulary tokens, <strong>LoRA fine-tuning</strong> that concentrates gradient signals on schema-relevant positions, and a <strong>grammar-constrained beam decoder</strong> that guarantees syntactically valid JSON at every generation step. A downstream GraphSAGE anomaly detector built on RECIQ's structured output reaches 68.1% macro F1 for financial auditing.</p>
+          <div class="project-stats">
+            <div class="project-stat"><span class="stat-val">83.04%</span><span class="stat-key">Active Exact Match</span></div>
+            <div class="project-stat"><span class="stat-val">99.0%</span><span class="stat-key">Parse Rate</span></div>
+            <div class="project-stat"><span class="stat-val">+48.5pp</span><span class="stat-key">Over Best Baseline</span></div>
+            <div class="project-stat"><span class="stat-val">7,124</span><span class="stat-key">Invoices Trained On</span></div>
+          </div>
+          <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
+          <div class="project-stack">
+            <span>Qwen2-VL-7B</span><span>LoRA / PEFT</span><span>PyTorch</span><span>HuggingFace</span><span>PyTorch Geometric</span>
           </div>
         </div>
-      </article>
+      </details>
 
       <!-- Edge Defense -->
-      <article class="project-card" id="edge-defense">
-        <div class="project-card-inner project-card-inner--single">
-          <div class="project-meta">
-            <span class="project-type">Research · Co-authored (equal contribution)</span>
-            <span class="project-badge-inline">Submitted to conference</span>
+      <details class="project-tile" id="edge-defense">
+        <summary class="tile-summary">
+          <div class="tile-top-row">
+            <span class="tile-badge">Research · Co-authored · Submitted to conference</span>
+            <span class="tile-chevron" aria-hidden="true"></span>
           </div>
-          <h3 class="project-title">Edge Defense</h3>
-          <p class="project-subtitle">Cross-Domain, Explainable Intrusion Detection</p>
+          <h3 class="tile-title">Edge Defense — Cross-Domain Intrusion Detection</h3>
+          <p class="tile-oneliner">Explainable NIDS that transferred catastrophically (AUC 0.264) until SHAP traced a sign-inverted feature — then a 0.979 / 0.971 AUC pooled model with an honest adversarial audit.</p>
+        </summary>
+        <div class="tile-body">
           <p class="project-desc">Pre-trained enterprise intrusion detectors collapse when applied to IoT traffic — ours fell to <strong>AUC 0.264 (below chance)</strong>, and SHAP traced it to a sign-inverted feature relationship confirmed by a second explainability method. Rather than patch the symptom, we pooled both enterprise and IoT datasets (600K+ rows) into a single XGBoost model reaching <strong>0.979 / 0.971 AUC</strong>, outperforming two domain-adaptation baselines head-to-head.</p>
           <p class="project-desc">An adversarial-robustness audit revealed the model's true vulnerability was <strong>83–100%</strong> (not near-zero as initial estimates suggested); a SHAP-based drift monitor still flags evaded traffic with a <strong>145× margin</strong>. Benchmarked end-to-end on a resource-constrained edge proxy with a bounded 4.1× latency increase (4.3 ms → 17.5 ms).</p>
-          <div class="project-collab">Co-authored with Harishni A. (equal contribution) · VIT Chennai</div>
           <div class="project-stats">
             <div class="project-stat"><span class="stat-val">0.979</span><span class="stat-key">Enterprise AUC</span></div>
             <div class="project-stat"><span class="stat-val">0.971</span><span class="stat-key">IoT AUC</span></div>
             <div class="project-stat"><span class="stat-val">145×</span><span class="stat-key">Drift Flag Margin</span></div>
             <div class="project-stat"><span class="stat-val">4.1×</span><span class="stat-key">Edge Latency Cost</span></div>
           </div>
+          <div class="project-collab">Co-authored with Harishni A. (equal contribution) · VIT Chennai</div>
           <div class="project-stack">
             <span>XGBoost</span><span>SHAP</span><span>LIME</span><span>Adversarial Robustness Toolbox</span><span>FastAPI</span><span>React</span>
           </div>
           <a href="https://edge-defense-ui.vercel.app" target="_blank" class="project-live">View live demo ↗</a>
         </div>
-      </article>
+      </details>
 
       <!-- Anchor -->
-      <article class="project-card project-card--small" id="anchor">
-        <div class="project-card-inner project-card-inner--single">
-          <div class="project-meta">
-            <span class="project-type">Technical Assessment · Lunorsoft</span>
-            <span class="project-year">2026</span>
+      <details class="project-tile" id="anchor">
+        <summary class="tile-summary">
+          <div class="tile-top-row">
+            <span class="tile-badge">Technical Assessment · Lunorsoft · 2026</span>
+            <span class="tile-chevron" aria-hidden="true"></span>
           </div>
-          <h3 class="project-title">Anchor</h3>
-          <p class="project-subtitle">Retrieval-Augmented Study Assistant</p>
+          <h3 class="tile-title">Anchor — Retrieval-Augmented Study Assistant</h3>
+          <p class="tile-oneliner">RAG assistant with hybrid BM25+dense retrieval, cross-encoder reranker, and an LLM-judge evaluation harness that lifted answer quality 61→87%.</p>
+        </summary>
+        <div class="tile-body">
           <p class="project-desc">A RAG study assistant over an openly-licensed Open-Stax textbook corpus. Hybrid <strong>BM25 + dense retrieval</strong> fused via Reciprocal Rank Fusion with a cross-encoder reranker (95% top-5 passage recall on a 39-question evaluation set). An <strong>LLM-judge evaluation harness</strong> (gpt-oss-120b answerer, qwen3-27b judge) measures faithfulness, correctness, citation and off-syllabus refusal — every prompt and threshold choice was iterated against the harness rather than by inspection.</p>
           <div class="project-stats">
             <div class="project-stat"><span class="stat-val">61 → 87%</span><span class="stat-key">Fully Correct</span></div>
@@ -299,23 +276,25 @@
           </div>
           <a href="https://kruthikha-anchor-learning.hf.space/" target="_blank" class="project-live">View live demo ↗</a>
         </div>
-      </article>
+      </details>
 
       <!-- CareConnect -->
-      <article class="project-card project-card--small" id="careconnect">
-        <div class="project-card-inner project-card-inner--single">
-          <div class="project-meta">
-            <span class="project-type">Personal Project</span>
-            <span class="project-year">2025</span>
+      <details class="project-tile" id="careconnect">
+        <summary class="tile-summary">
+          <div class="tile-top-row">
+            <span class="tile-badge">Personal Project · 2025</span>
+            <span class="tile-chevron" aria-hidden="true"></span>
           </div>
-          <h3 class="project-title">CareConnect</h3>
-          <p class="project-subtitle">Smart Healthcare Recommendation</p>
+          <h3 class="tile-title">CareConnect — Smart Healthcare Recommendation</h3>
+          <p class="tile-oneliner">Django platform matching patients to providers by symptoms, location, and specialisation.</p>
+        </summary>
+        <div class="tile-body">
           <p class="project-desc">Healthcare platform matching patients to providers based on symptoms, location, and specialisation. Secure authentication, appointment scheduling, and provider recommendation logic built on Django.</p>
           <div class="project-stack">
             <span>Django</span><span>SQLite</span><span>Tailwind CSS</span><span>Python</span>
           </div>
         </div>
-      </article>
+      </details>
 
     </div>
   </section>
@@ -467,8 +446,8 @@
     <span>Chennai, India</span>
   </footer>
 
-  <script src="script.js?v=3"></script>
-  <script src="chat.js?v=3"></script>
+  <script src="script.js?v=4"></script>
+  <script src="chat.js?v=4"></script>
 
   <!-- CHAT WIDGET -->
   <div class="chat-bubble" id="chatBubble" onclick="toggleChat()">

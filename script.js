@@ -166,3 +166,20 @@ const statObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.project-card').forEach(el => statObserver.observe(el));
 
+// ---- PROJECT TILE: ANIMATE STATS ON FIRST EXPAND ----
+document.querySelectorAll('.project-tile').forEach(tile => {
+  const animatedOnce = { done: false };
+  tile.addEventListener('toggle', () => {
+    if (tile.open && !animatedOnce.done) {
+      tile.querySelectorAll('.stat-val').forEach(animateCounter);
+      animatedOnce.done = true;
+    }
+  });
+});
+
+// ---- SCROLL REVEAL EXTENSION FOR TILES ----
+document.querySelectorAll('.project-tile').forEach(el => {
+  el.classList.add('reveal');
+  revealObserver.observe(el);
+});
+
