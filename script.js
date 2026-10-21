@@ -120,18 +120,36 @@ if (window.matchMedia('(pointer: fine)').matches) {
 }
 
 // ---- STAT COUNTER ANIMATION ----
+// Preserves leading prefix (e.g. "+"), trailing suffix (e.g. "%", "pp", "×"),
+// original decimal precision, and thousand-separator commas.
 function animateCounter(el) {
-  const text = el.textContent;
-  const num = parseFloat(text.replace(/[^0-9.]/g, ''));
-  const suffix = text.replace(/[0-9.]/g, '');
+  const text = el.textContent.trim();
+  const match = text.match(/^([^0-9]*)([0-9][0-9,.]*)(.*)$/);
+  if (!match) return;
+  const prefix = match[1];
+  const numStr = match[2];
+  const suffix = match[3];
+  const hadCommas = numStr.includes(',');
+  const cleanNumStr = numStr.replace(/,/g, '');
+  const num = parseFloat(cleanNumStr);
   if (isNaN(num)) return;
+  const decimalMatch = cleanNumStr.match(/\.(\d+)/);
+  const decimals = decimalMatch ? decimalMatch[1].length : 0;
   const duration = 1200;
   const start = performance.now();
+  function format(val) {
+    let str = decimals === 0 ? Math.round(val).toString() : val.toFixed(decimals);
+    if (hadCommas) {
+      const parts = str.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      str = parts.join('.');
+    }
+    return prefix + str + suffix;
+  }
   function update(now) {
     const t = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - t, 3);
-    const val = num * ease;
-    el.textContent = (Number.isInteger(num) ? Math.round(val) : val.toFixed(2)) + suffix;
+    el.textContent = format(num * ease);
     if (t < 1) requestAnimationFrame(update);
   }
   requestAnimationFrame(update);

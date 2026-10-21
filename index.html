@@ -62,12 +62,17 @@
           <div class="currently-row">
             <span class="currently-arrow">→</span>
             <span class="currently-project">RECIQ</span>
-            <span class="currently-status"> Manuscript under consideration</span>
+            <span class="currently-status">Manuscript under review</span>
           </div>
           <div class="currently-row">
             <span class="currently-arrow">→</span>
             <span class="currently-project">Edge Defense</span>
-            <span class="currently-status">Live in production · Vercel</span>
+            <span class="currently-status">Submitted to conference · Live demo</span>
+          </div>
+          <div class="currently-row">
+            <span class="currently-arrow">→</span>
+            <span class="currently-project">VolatilityIQ</span>
+            <span class="currently-status">Submitted to conference</span>
           </div>
           <div class="currently-row">
             <span class="currently-arrow">→</span>
@@ -104,7 +109,7 @@
         </div>
       </div>
       <div class="about-right">
-        <p>I'm a third-year Computer Science student at VIT Chennai, building AI systems that solve practical problems — not just models that perform well on paper. I'm particularly interested in document intelligence, explainable machine learning, and the challenge of turning messy, real-world data into structured, reliable systems.</p>
+        <p>I'm a final-year Computer Science student at VIT Chennai, building AI systems that solve practical problems — not just models that perform well on paper. I'm particularly interested in document intelligence, explainable machine learning, and the challenge of turning messy, real-world data into structured, reliable systems.</p>
         <p>What excites me most isn't just training a model — it's understanding the entire system around it. I enjoy asking why something works, how people will actually use it, where it might fail, and what makes it reliable enough to trust in the real world. That curiosity has naturally pulled me toward the intersection of AI and product thinking.</p>
         <p>I'm always looking for opportunities to work with thoughtful teams, learn from experienced engineers, and contribute to AI products that create meaningful impact.</p>
         <div class="about-links">
@@ -126,7 +131,8 @@
         <div class="skill-tags">
           <span>PyTorch</span><span>Scikit-learn</span><span>HuggingFace</span>
           <span>LoRA / PEFT</span><span>Qwen2-VL</span><span>XGBoost</span>
-          <span>SHAP</span><span>OpenCV</span><span>Transformers</span>
+          <span>SHAP</span><span>LIME</span><span>OpenCV</span><span>Transformers</span>
+          <span>PyTorch Geometric</span><span>Adversarial Robustness Toolbox</span>
         </div>
       </div>
       <div class="skill-group">
@@ -136,10 +142,12 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-label">NLP & Data</div>
+        <div class="skill-group-label">NLP, RAG & Data</div>
         <div class="skill-tags">
           <span>NER</span><span>Constrained Decoding</span><span>Tokenizer Engineering</span>
-          <span>Pandas</span><span>NumPy</span><span>Tableau</span>
+          <span>Hybrid BM25 + Dense</span><span>RRF</span><span>Cross-encoder Rerankers</span>
+          <span>LLM-Judge Evaluation</span><span>GARCH</span><span>statsmodels / arch</span>
+          <span>Tesseract OCR</span><span>Pandas</span><span>NumPy</span><span>Tableau</span>
         </div>
       </div>
       <div class="skill-group">
@@ -170,16 +178,16 @@
         <div class="project-card-inner">
           <div class="project-left">
             <div class="project-meta">
-              <span class="project-type">Research · Co-authored</span>
-              <span class="project-badge-inline">Manuscript under consideration</span>
+              <span class="project-type">Research · Co-authored (equal contribution)</span>
+              <span class="project-badge-inline">Manuscript under review</span>
             </div>
             <h3 class="project-title">RECIQ</h3>
-            <p class="project-subtitle">Multimodal Receipt Extraction System</p>
-            <p class="project-desc">Real-world Tamil Nadu invoices are full of Tanglish — Tamil food names, merchant identifiers, and item descriptions written in Latin script that generic vision-language models simply don't understand. On top of that, the schema is extreme: 174 fields, but fewer than 7% filled per invoice. Standard models hallucinate values or produce unparseable output.</p>
-            <p class="project-desc">RECIQ tackles both problems on Qwen2-VL-7B-Instruct through three core ideas: <strong>tokenizer surgery</strong> that injects all 174 schema field names as atomic vocabulary tokens, <strong>LoRA fine-tuning</strong> that concentrates gradient signals on schema-relevant positions, and a <strong>grammar-constrained beam decoder</strong> that guarantees syntactically valid JSON at every generation step. A downstream GNN anomaly detector built on RECIQ's structured output achieves macro F1 of 70.0%, demonstrating real utility for financial auditing.</p>
-            <div class="project-collab">Co-authored research · VIT Chennai</div>
+            <p class="project-subtitle">Multimodal Invoice Extraction System</p>
+            <p class="project-desc">Indian commercial invoices are extraction-hard for two reasons at once: a long-tail schema of 174 fields where fewer than 7% are filled per invoice, and natural visual noise that generic vision-language models were never trained for. Off-the-shelf VLMs hallucinate values or produce unparseable output.</p>
+            <p class="project-desc">RECIQ tackles both problems on Qwen2-VL-7B-Instruct through three core ideas: <strong>tokenizer surgery</strong> that injects all 174 schema field names as atomic vocabulary tokens, <strong>LoRA fine-tuning</strong> that concentrates gradient signals on schema-relevant positions, and a <strong>grammar-constrained beam decoder</strong> that guarantees syntactically valid JSON at every generation step. A downstream GraphSAGE anomaly detector built on RECIQ's structured output reaches 68.1% macro F1 for financial auditing.</p>
+            <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
             <div class="project-stack">
-              <span>Qwen2-VL-7B</span><span>LoRA / PEFT</span><span>PyTorch</span><span>HuggingFace</span><span>FastAPI</span>
+              <span>Qwen2-VL-7B</span><span>LoRA / PEFT</span><span>PyTorch</span><span>HuggingFace</span><span>PyTorch Geometric</span>
             </div>
           </div>
           <div class="project-right">
@@ -193,7 +201,7 @@
                 <span class="stat-key">Parse Rate</span>
               </div>
               <div class="project-stat-big">
-                <span class="stat-val">+74.9pp</span>
+                <span class="stat-val">+48.5pp</span>
                 <span class="stat-key">Over Best Baseline</span>
               </div>
               <div class="project-stat-big">
@@ -209,21 +217,45 @@
       <article class="project-card" id="edge-defense">
         <div class="project-card-inner project-card-inner--single">
           <div class="project-meta">
-            <span class="project-type">Full Stack · Deployed</span>
-            <span class="project-year">Jan — Apr 2026</span>
+            <span class="project-type">Research · Co-authored (equal contribution)</span>
+            <span class="project-badge-inline">Submitted to conference</span>
           </div>
           <h3 class="project-title">Edge Defense</h3>
-          <p class="project-subtitle">AI Network Intrusion Detection</p>
-          <p class="project-desc">Production ML system for network intrusion detection. XGBoost trained on 2.83M network flows with SHAP explainability on every prediction, enabling per-alert feature attribution for security analysts. Identified and removed Destination Port as a leaky feature through SHAP analysis. FastAPI backend on Render, React dashboard on Vercel with live traffic analysis and drag-and-drop CSV batch processing.</p>
+          <p class="project-subtitle">Cross-Domain, Explainable Intrusion Detection</p>
+          <p class="project-desc">Pre-trained enterprise intrusion detectors collapse when applied to IoT traffic — ours fell to <strong>AUC 0.264 (below chance)</strong>, and SHAP traced it to a sign-inverted feature relationship confirmed by a second explainability method. Rather than patch the symptom, we pooled both enterprise and IoT datasets (600K+ rows) into a single XGBoost model reaching <strong>0.979 / 0.971 AUC</strong>, outperforming two domain-adaptation baselines head-to-head.</p>
+          <p class="project-desc">An adversarial-robustness audit revealed the model's true vulnerability was <strong>83–100%</strong> (not near-zero as initial estimates suggested); a SHAP-based drift monitor still flags evaded traffic with a <strong>145× margin</strong>. Benchmarked end-to-end on a resource-constrained edge proxy with a bounded 4.1× latency increase (4.3 ms → 17.5 ms).</p>
+          <div class="project-collab">Co-authored with Harishni A. (equal contribution) · VIT Chennai</div>
           <div class="project-stats">
-            <div class="project-stat"><span class="stat-val">99.57%</span><span class="stat-key">Accuracy</span></div>
-            <div class="project-stat"><span class="stat-val">0.52ms</span><span class="stat-key">Inference Latency</span></div>
-            <div class="project-stat"><span class="stat-val">0.9998</span><span class="stat-key">ROC-AUC</span></div>
+            <div class="project-stat"><span class="stat-val">0.979</span><span class="stat-key">Enterprise AUC</span></div>
+            <div class="project-stat"><span class="stat-val">0.971</span><span class="stat-key">IoT AUC</span></div>
+            <div class="project-stat"><span class="stat-val">145×</span><span class="stat-key">Drift Flag Margin</span></div>
+            <div class="project-stat"><span class="stat-val">4.1×</span><span class="stat-key">Edge Latency Cost</span></div>
           </div>
           <div class="project-stack">
-            <span>XGBoost</span><span>SHAP</span><span>FastAPI</span><span>React</span><span>Supabase</span>
+            <span>XGBoost</span><span>SHAP</span><span>LIME</span><span>Adversarial Robustness Toolbox</span><span>FastAPI</span><span>React</span>
           </div>
-          <a href="https://edge-defense-ui.vercel.app" target="_blank" class="project-live">View live ↗</a>
+          <a href="https://edge-defense-ui.vercel.app" target="_blank" class="project-live">View live demo ↗</a>
+        </div>
+      </article>
+
+      <!-- Anchor -->
+      <article class="project-card project-card--small" id="anchor">
+        <div class="project-card-inner project-card-inner--single">
+          <div class="project-meta">
+            <span class="project-type">Technical Assessment · Lunorsoft</span>
+            <span class="project-year">2026</span>
+          </div>
+          <h3 class="project-title">Anchor</h3>
+          <p class="project-subtitle">Retrieval-Augmented Study Assistant</p>
+          <p class="project-desc">A RAG study assistant over an openly-licensed Open-Stax textbook corpus. Hybrid <strong>BM25 + dense retrieval</strong> fused via Reciprocal Rank Fusion with a cross-encoder reranker (95% top-5 passage recall on a 39-question evaluation set). An <strong>LLM-judge evaluation harness</strong> (gpt-oss-120b answerer, qwen3-27b judge) measures faithfulness, correctness, citation and off-syllabus refusal — every prompt and threshold choice was iterated against the harness rather than by inspection.</p>
+          <div class="project-stats">
+            <div class="project-stat"><span class="stat-val">61 → 87%</span><span class="stat-key">Fully Correct</span></div>
+            <div class="project-stat"><span class="stat-val">78 → 92%</span><span class="stat-key">Faithfulness</span></div>
+            <div class="project-stat"><span class="stat-val">100%</span><span class="stat-key">Off-Syllabus Refusal</span></div>
+          </div>
+          <div class="project-stack">
+            <span>RAG</span><span>BM25 + Dense</span><span>RRF</span><span>Cross-encoder Reranker</span><span>LLM-Judge Eval</span>
+          </div>
         </div>
       </article>
 
@@ -249,14 +281,15 @@
   <!-- RESEARCH -->
   <section class="research section" id="research">
     <div class="section-label">Research</div>
-    <h2 class="section-heading">Papers in<br /><em>progress.</em></h2>
+    <h2 class="section-heading">Research<br /><em>output.</em></h2>
     <div class="research-list">
       <div class="research-item">
         <div class="research-num">01</div>
         <div class="research-body">
-          <div class="research-status research-status--submitted">Manuscript under consideration</div>
-          <h3>Multimodal Structured Extraction via Constrained Decoding</h3>
-          <p>Vision-language models with grammar-constrained beam search for schema-aligned JSON extraction from noisy, real-world Tanglish invoice images. Co-authored research advised by faculty at VIT Chennai.</p>
+          <div class="research-status research-status--submitted">Manuscript under review</div>
+          <h3>Schema-Constrained Multimodal Extraction of Indian Commercial Invoices Under Extreme Schema Sparsity</h3>
+          <p class="research-authors"><em>Kruthikha Vishali K.†, Harishni A.†, R. Kanniga Devi.</em> <span class="research-note">† Equal contribution; shared first authorship.</span></p>
+          <p>Vision-language models with tokenizer surgery, LoRA fine-tuning and grammar-constrained beam search for schema-aligned JSON extraction from Indian commercial invoices. 83.04% Active Exact Match and 99.0% parse rate on held-out synthetic invoices, outperforming the strongest fine-tuned baseline (Florence-2-base) by +48.5 percentage points.</p>
           <div class="research-tags">
             <span>Multimodal</span><span>NLP</span><span>Constrained Decoding</span><span>VLM Fine-tuning</span>
           </div>
@@ -265,11 +298,36 @@
       <div class="research-item">
         <div class="research-num">02</div>
         <div class="research-body">
+          <div class="research-status research-status--submitted">Submitted to conference</div>
+          <h3>A Single Model for Enterprise and IoT Intrusion Detection: Cross-Domain Failure, Adversarial Robustness, and Edge Deployment</h3>
+          <p class="research-authors"><em>Harishni A.*, Kruthikha Vishali K.*, Balasaraswathi V. R.</em> <span class="research-note">* Equal contribution between first two authors.</span></p>
+          <p>Explainable network intrusion detection pooling enterprise and IoT datasets into one XGBoost model (0.979 / 0.971 AUC) after SHAP-traced cross-domain failure analysis, with an adversarial-robustness audit (true vulnerability 83–100%) and an edge-deployed pipeline that stays within memory limits.</p>
+          <div class="research-tags">
+            <span>Explainable ML</span><span>Adversarial Robustness</span><span>Edge Deployment</span><span>XGBoost</span>
+          </div>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">03</div>
+        <div class="research-body">
           <div class="research-status research-status--progress">PUBLISHED</div>
-          <h3>CalmWeave: A Tri-Layer Adaptive Smart Vest for COPD Respiratory Support</h3>
-          <p>A washable smart textile vest for COPD management using closed-loop haptic intervention and prior-informed ensemble anomaly detection (OC-SVM + Isolation Forest + GMM). Cross-disciplinary work at the intersection of smart textile engineering and wearable machine learning. Published in NCSFI 2026 proceedings ISBN: 978-93-95105-17-0,PSG College of Technology.</p>
+          <h3>CalmWeave: A Tri-Layer Adaptive Smart Vest for COPD Respiratory Support Using Closed-Loop Haptic Intervention and Prior-Informed Ensemble Anomaly Detection</h3>
+          <p class="research-authors"><em>Kruthikha Vishali K.*, Dhanya V.*</em> <span class="research-note">* Equal contribution. Cross-departmental collaboration (CSE × Fashion Technology, VIT Chennai).</span></p>
+          <p>A washable smart-textile vest for COPD management using closed-loop haptic intervention and prior-informed ensemble anomaly detection (OC-SVM + Isolation Forest + GMM). Published in NCSFI 2026 Proceedings, ISBN 978-93-95105-17-0, PSG College of Technology, July 2026.</p>
           <div class="research-tags">
             <span>Wearable ML</span><span>Anomaly Detection</span><span>Smart Textiles</span><span>Edge Computing</span>
+          </div>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="research-num">04</div>
+        <div class="research-body">
+          <div class="research-status research-status--submitted">Patent · Under IP review</div>
+          <h3>Non-contact tonometer using acoustic-tap excitation and multi-beam interferometry for stiffness-corrected intraocular pressure measurement</h3>
+          <p class="research-authors"><em>Kruthikha Vishali K.</em> <span class="research-note">Sole inventor. Invention disclosure under review for patent filing (Khurana &amp; Khurana IP, 2026).</span></p>
+          <p>A non-contact self-administered IOP measurement device that combines amplitude-modulated acoustic radiation-force excitation, multi-beam phase-sensitive interferometry with a common-mode reference beam, cardiac-phase timing, and model-based joint inversion of IOP and corneal stiffness — with a reliability check that withholds unstable readings and a per-patient stiffness memory that improves precision over repeated home use.</p>
+          <div class="research-tags">
+            <span>Medical Devices</span><span>Ophthalmic Diagnostics</span><span>Acoustic + Optical Sensing</span><span>Signal Processing</span>
           </div>
         </div>
       </div>
@@ -285,12 +343,12 @@
         <div class="section-label">Currently Exploring</div>
         <h2 class="section-heading" style="font-size: clamp(2rem, 3.5vw, 3rem);">Ideas in<br /><em>motion.</em></h2>
         <div class="exploring-card">
-          <div class="exploring-tag">Multi-Phase Research · In Progress</div>
+          <div class="exploring-tag">Multi-Phase Research · Submitted to Conference</div>
           <h3>VolatilityIQ — Explainable Volatility Forecasting</h3>
-          <p>A research project fusing classical statistics and deep learning for Indian equity volatility prediction — with SHAP-based explainability and regime-conditional analysis. Phase 1 complete: the key finding is that GARCH's residual (not its forecast) becomes significantly more important during crisis periods (p&lt;0.0001, FDR-corrected), while the pooled average looks null because crisis days are only ~6% of the test set. Phase 2 in progress — fusing structured signals from earnings-call transcripts as a third input stream.</p>
+          <p>An explainable volatility forecasting system for Indian equities, fusing classical statistics (GARCH family) and deep learning with SHAP-based regime-conditional analysis. <strong>Phase 1 complete:</strong> GARCH's residual (not its forecast) becomes significantly more important during crisis periods (p&lt;0.0001, FDR-corrected) — the pooled average looks null because crisis days are only ~6% of the test set. <strong>Phase 2 in progress:</strong> incorporating structured earnings-call transcript features as a third signal stream, and exploring cross-stock volatility spillover with attention-based GNNs. Statistical validation (permutation testing, FDR correction, Diebold–Mariano tests) throughout.</p>
           <div class="exploring-stack">
-              <span>PyTorch</span><span>GARCH</span><span>SHAP</span><span>Transformer</span><span>NSE Equities</span><span>Transformer</span>    
-          </div>        
+              <span>PyTorch</span><span>statsmodels / arch</span><span>GARCH</span><span>SHAP</span><span>Transformers</span><span>GNNs</span><span>NSE Equities</span>
+          </div>
         </div>
       </div>
 
@@ -302,8 +360,22 @@
           <div class="extra-item">
             <div class="extra-icon">◎</div>
             <div class="extra-body">
+              <h4>IBM Advanced Generative AI — Certification</h4>
+              <p>IBM Career Education Program (CEGENAI1IN), powered by IBM Developer Skills Network. July 2026.</p>
+            </div>
+          </div>
+          <div class="extra-item">
+            <div class="extra-icon">◎</div>
+            <div class="extra-body">
               <h4>Student Coordinator — TechnoVIT'25</h4>
-              <p>Merchandize Committee, International Technical Fest of VIT Chennai. Oct 31 – Nov 2, 2025.</p>
+              <p>Merchandise Committee, International Technical Fest of VIT Chennai. Oct 31 – Nov 2, 2025.</p>
+            </div>
+          </div>
+          <div class="extra-item">
+            <div class="extra-icon">◎</div>
+            <div class="extra-body">
+              <h4>Conference Paper Author — NCSFI 2026</h4>
+              <p>Presented CalmWeave at the National Conference on Synergy in Fashion Industry, PSG College of Technology, Coimbatore. July 2026.</p>
             </div>
           </div>
           <div class="extra-item">
@@ -311,13 +383,6 @@
             <div class="extra-body">
               <h4>Hackathon Participant — DimoHack VIT-AP</h4>
               <p>Blockchain-focused hackathon. VIT-AP University, April 2024.</p>
-            </div>
-          </div>
-          <div class="extra-item">
-            <div class="extra-icon">◎</div>
-            <div class="extra-body">
-              <h4>Conference Paper Author — NCSFI-2026</h4>
-              <p>Presenting CalmWeave at the National Conference on Synergy in Fashion Industry, PSG College of Technology, Coimbatore. July 2026.</p>
             </div>
           </div>
         </div>
@@ -353,8 +418,8 @@
     <span>Chennai, India</span>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="chat.js"></script>
+  <script src="script.js?v=3"></script>
+  <script src="chat.js?v=3"></script>
 
   <!-- CHAT WIDGET -->
   <div class="chat-bubble" id="chatBubble" onclick="toggleChat()">
