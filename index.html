@@ -179,7 +179,7 @@
           <div class="project-left">
             <div class="project-meta">
               <span class="project-type">Bachelor's Thesis · Co-authored (equal contribution)</span>
-              <span class="project-badge-inline">7th sem → 8th sem capstone</span>
+              <span class="project-badge-inline">Capstone in progress</span>
             </div>
             <h3 class="project-title">TB–Diabetes Comorbidity Risk Screening</h3>
             <p class="project-subtitle">Explainable Screening on a National TB Registry</p>
@@ -214,26 +214,42 @@
         </div>
       </article>
 
-      <!-- RECIQ -->
-      <article class="project-card" id="reciq">
-        <div class="project-card-inner project-card-inner--single">
-          <div class="project-meta">
-            <span class="project-type">Research · Co-authored (equal contribution)</span>
-            <span class="project-badge-inline">Manuscript under review</span>
+      <!-- RECIQ (featured — ranked #2, matched prominence to TB-DM) -->
+      <article class="project-card project-card--featured" id="reciq">
+        <div class="project-card-inner">
+          <div class="project-left">
+            <div class="project-meta">
+              <span class="project-type">Research · Co-authored (equal contribution)</span>
+              <span class="project-badge-inline">Manuscript under review</span>
+            </div>
+            <h3 class="project-title">RECIQ</h3>
+            <p class="project-subtitle">Multimodal Invoice Extraction System</p>
+            <p class="project-desc">Indian commercial invoices are extraction-hard for two reasons at once: a long-tail schema of 174 fields where fewer than 7% are filled per invoice, and natural visual noise that generic vision-language models were never trained for. Off-the-shelf VLMs hallucinate values or produce unparseable output.</p>
+            <p class="project-desc">RECIQ tackles both problems on Qwen2-VL-7B-Instruct through three core ideas: <strong>tokenizer surgery</strong> that injects all 174 schema field names as atomic vocabulary tokens, <strong>LoRA fine-tuning</strong> that concentrates gradient signals on schema-relevant positions, and a <strong>grammar-constrained beam decoder</strong> that guarantees syntactically valid JSON at every generation step. A downstream GraphSAGE anomaly detector built on RECIQ's structured output reaches 68.1% macro F1 for financial auditing.</p>
+            <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
+            <div class="project-stack">
+              <span>Qwen2-VL-7B</span><span>LoRA / PEFT</span><span>PyTorch</span><span>HuggingFace</span><span>PyTorch Geometric</span>
+            </div>
           </div>
-          <h3 class="project-title">RECIQ</h3>
-          <p class="project-subtitle">Multimodal Invoice Extraction System</p>
-          <p class="project-desc">Indian commercial invoices are extraction-hard for two reasons at once: a long-tail schema of 174 fields where fewer than 7% are filled per invoice, and natural visual noise that generic vision-language models were never trained for. Off-the-shelf VLMs hallucinate values or produce unparseable output.</p>
-          <p class="project-desc">RECIQ tackles both problems on Qwen2-VL-7B-Instruct through three core ideas: <strong>tokenizer surgery</strong> that injects all 174 schema field names as atomic vocabulary tokens, <strong>LoRA fine-tuning</strong> that concentrates gradient signals on schema-relevant positions, and a <strong>grammar-constrained beam decoder</strong> that guarantees syntactically valid JSON at every generation step. A downstream GraphSAGE anomaly detector built on RECIQ's structured output reaches 68.1% macro F1 for financial auditing.</p>
-          <div class="project-collab">Co-authored with Harishni A. (equal contribution) · Supervised by Dr. R. Kanniga Devi · VIT Chennai</div>
-          <div class="project-stats">
-            <div class="project-stat"><span class="stat-val">83.04%</span><span class="stat-key">Active Exact Match</span></div>
-            <div class="project-stat"><span class="stat-val">99.0%</span><span class="stat-key">Parse Rate</span></div>
-            <div class="project-stat"><span class="stat-val">+48.5pp</span><span class="stat-key">Over Best Baseline</span></div>
-            <div class="project-stat"><span class="stat-val">7,124</span><span class="stat-key">Invoices Trained On</span></div>
-          </div>
-          <div class="project-stack">
-            <span>Qwen2-VL-7B</span><span>LoRA / PEFT</span><span>PyTorch</span><span>HuggingFace</span><span>PyTorch Geometric</span>
+          <div class="project-right">
+            <div class="project-stats-col">
+              <div class="project-stat-big">
+                <span class="stat-val">83.04%</span>
+                <span class="stat-key">Active Exact Match</span>
+              </div>
+              <div class="project-stat-big">
+                <span class="stat-val">99.0%</span>
+                <span class="stat-key">Parse Rate</span>
+              </div>
+              <div class="project-stat-big">
+                <span class="stat-val">+48.5pp</span>
+                <span class="stat-key">Over Best Baseline</span>
+              </div>
+              <div class="project-stat-big">
+                <span class="stat-val">7,124</span>
+                <span class="stat-key">Invoices Trained On</span>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -281,6 +297,7 @@
           <div class="project-stack">
             <span>RAG</span><span>BM25 + Dense</span><span>RRF</span><span>Cross-encoder Reranker</span><span>LLM-Judge Eval</span>
           </div>
+          <a href="https://kruthikha-anchor-learning.hf.space/" target="_blank" class="project-live">View live demo ↗</a>
         </div>
       </article>
 
